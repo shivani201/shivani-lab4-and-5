@@ -1,0 +1,58 @@
+
+// something is happening
+#include"LL.cpp"
+
+class queue{
+	public:
+	Node* front;
+	Node* end;
+	LinkedList l1;
+	
+	//Constructor
+	queue(){
+		end=l1.head;
+		front=l1.tail;
+	}
+
+	//enter from end side
+	void enqueue(int value){
+		//Use insertAt from LL
+		l1.insertAt(1,value);
+		//Update front and end
+		end=l1.head;
+		front=l1.tail;
+
+	}
+
+	//remove from front
+	void dequeue(){
+		l1.del();
+		//You know the drill
+		end=l1.head;
+		front=l1.tail;
+	}
+
+	// i think my queue is not empty??
+	bool isEmpty(){
+		if(end == NULL){return true;}
+		return false;
+	}
+
+	//ohh god how much long this queue
+	void size(){
+		l1.countItems();
+	}
+
+	//please see 
+	void display(){
+		l1.display();
+	}
+
+	//what is in last??
+	void enddisp(){
+		cout << "The head is " <<l1.head->data << endl;
+	}
+
+};
+
+    
